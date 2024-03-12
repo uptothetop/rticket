@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Header from './Header';
+import Like from './Like';
+import List from './List';
 
 function App() {
+  const [likes, setLikes] = React.useState(0);
+  const list = ['1', '2'];
+
+  const setLike = likes => {
+    console.log('Setlikes called');
+    setLikes(likes + 1);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header text="Hello world" />
+      <List list={list} />
+      {likes}
+      <Like likes={likes} setLike={setLike} />
+      <Like likes={likes} setLike={setLike} />
     </div>
   );
 }
