@@ -8,7 +8,7 @@ function App() {
   const [likes, setLikes] = React.useState(0);
   const list = ['1', '2'];
 
-  const setLike = likes => {
+  const setLike = () => {
     console.log('Setlikes called');
     setLikes(likes + 1);
   }
@@ -18,8 +18,8 @@ function App() {
       <Header text="Hello world" />
       <List list={list} />
       {likes}
-      <Like likes={likes} setLike={setLike} />
-      <Like likes={likes} setLike={setLike} />
+      <Like likes={likes} setLikes={setLike} />
+      <Like likes={likes} setLikes={setLike} />
     </div>
   );
 }
